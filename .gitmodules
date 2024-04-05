@@ -31,3 +31,6 @@
 [submodule "projects/seL4_projects_libs"]
 	path = projects/seL4_projects_libs
 	url = https://github.com/seL4/seL4_projects_libs.git
+[submodule "projects/sel4-tutorials"]
+	path = projects/sel4-tutorials
+	url = https://github.com/seL4/sel4-tutorials.git
