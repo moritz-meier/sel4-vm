@@ -1,0 +1,33 @@
+[submodule "kernel"]
+	path = kernel
+	url = https://github.com/seL4/seL4.git
+[submodule "projects/camkes-tool"]
+	path = projects/camkes-tool
+	url = https://github.com/seL4/camkes-tool.git
+[submodule "projects/capdl"]
+	path = projects/capdl
+	url = https://github.com/seL4/capdl.git
+[submodule "projects/global-components"]
+	path = projects/global-components
+	url = https://github.com/seL4/global-components.git
+[submodule "projects/musllibc"]
+	path = projects/musllibc
+	url = https://github.com/seL4/musllibc.git
+[submodule "projects/sel4runtime"]
+	path = projects/sel4runtime
+	url = https://github.com/seL4/sel4runtime.git
+[submodule "projects/seL4_libs"]
+	path = projects/seL4_libs
+	url = https://github.com/seL4/seL4_libs.git
+[submodule "tools/seL4"]
+	path = tools/seL4
+	url = https://github.com/seL4/seL4_tools.git
+[submodule "projects/util_libs"]
+	path = projects/util_libs
+	url = https://github.com/seL4/util_libs.git
+[submodule "projects/projects_libs"]
+	path = projects/projects_libs
+	url = https://github.com/seL4/projects_libs.git
+[submodule "projects/seL4_projects_libs"]
+	path = projects/seL4_projects_libs
+	url = https://github.com/seL4/seL4_projects_libs.git
