@@ -1,25 +1,21 @@
-#
-# Copyright 2020, Data61, CSIRO (ABN 41 687 119 230)
-#
-# SPDX-License-Identifier: BSD-2-Clause
-#
 cmake_minimum_required(VERSION 3.7.2)
-project(sel4-application NONE)
 
 include(settings.cmake)
 
-# This is a default file that can be copied/symlinked into the top level of a project
-# if you have the expected directory layout and you want no customizations beyond
-# the defaults provided in the all.cmake
+file(GLOB result RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" examples/*/CMakeLists.txt)
 
-# Try a bunch of different default locations for the script. The different locations
-# come about from different project layouts depending on how far through the transition
-# from the old build system they are
-include(tools/seL4/cmake-tool/all.cmake OPTIONAL RESULT_VARIABLE found_all_cmake)
-if(NOT found_all_cmake)
-    include(tools/cmake-tool/all.cmake OPTIONAL RESULT_VARIABLE found_all_cmake)
-    if(NOT found_all_cmake)
-        message(FATAL_ERROR "No path for including cmake-tool/all.cmake was successful")
-    endif()
-endif()
+# We sort the results to ensure that builds are deterministic. Whilst build scripts
+# should not be written to need a particular order of globbed results here, it is
+# better to have reliable builds than random failures
+list(SORT result)
 
+foreach(file ${result})
+    string(
+        REPLACE
+            "CMakeLists.txt"
+            ""
+            file
+            "${file}"
+    )
+    add_subdirectory("${file}")
+endforeach()
