@@ -31,3 +31,9 @@
 [submodule "projects/seL4_projects_libs"]
 	path = projects/seL4_projects_libs
 	url = https://github.com/seL4/seL4_projects_libs.git
+[submodule "projects/camkes-vm"]
+	path = projects/camkes-vm
+	url = https://github.com/seL4/camkes-vm.git
+[submodule "projects/camkes-vm-linux"]
+	path = projects/camkes-vm-linux
+	url = https://github.com/seL4/camkes-vm-linux.git
