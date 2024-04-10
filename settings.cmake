@@ -1,4 +1,4 @@
-set(project_dir "${CMAKE_CURRENT_LIST_DIR}/")
+set(project_dir "${CMAKE_CURRENT_LIST_DIR}")
 file(GLOB project_modules ${project_dir}/projects/*)
 list(
 	APPEND
@@ -12,8 +12,11 @@ include(application_settings)
 
 correct_platform_strings()
 
-# find_package(seL4 REQUIRED)
-# sel4_configure_platform_settings()
+set(LibSel4PlatSupportUseDebugPutChar true CACHE BOOL "" FORCE)
+set(CapDLLoaderMaxObjects 20000 CACHE STRING "" FORCE)
+set(KernelRootCNodeSizeBits 16 CACHE STRING "")
+set(LibSel4MuslcSysDebugHalt FALSE CACHE BOOL "" FORCE)
+set(KernelNumDomains 1 CACHE STRING "" FORCE)
 
 ApplyCommonSimulationSettings("${KernelSel4Arch}")
 ApplyCommonReleaseVerificationSettings(${RELEASE} ${VERIFICATION})
