@@ -9,3 +9,9 @@ cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=../kernel/gcc.cmake -DPLATFORM=x86_64 -DKer
 
 ninja
 ```
+
+## Qemu
+
+```
+qemu-system-x86_64 -cpu host -enable-kvm -m 1G -nographic -serial mon:stdio -kernel images/kernel-x86_64-pc99 -initrd images/capdl-loader-image-x86_64-pc99
+```
