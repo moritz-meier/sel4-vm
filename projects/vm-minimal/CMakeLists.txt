@@ -12,12 +12,9 @@ camkes_x86_vm_setup_x86_vm_environment()
 find_package(camkes-vm-linux REQUIRED)
 include(../camkes-vm-linux/vm-linux-helpers.cmake)
 
-GetDefaultLinuxKernelFile(kernel_file)
-GetDefaultLinuxRootfsFile(rootfs_file)
-
-DecompressLinuxKernel(extract_linux_kernel decompressed_kernel ${kernel_file})
+DecompressLinuxKernel(extract_linux_kernel decompressed_kernel /run/media/data/moritz/Repositories/dlr/sel4-vm/projects/vm-minimal/default_bzimage_4.8.16)
 AddToFileServer("bzimage" ${decompressed_kernel} DEPENDS extract_linux_kernel)
-AddToFileServer("rootfs.cpio" ${rootfs_file})
+AddToFileServer("rootfs.cpio" /run/media/data/moritz/Repositories/dlr/sel4-vm/projects/vm-minimal/default_buildroot_rootfs-bare.cpio)
 
 DeclareCAmkESVM(Init0)
 DeclareCAmkESVMRootServer(minimal-vm.camkes)
